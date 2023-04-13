@@ -205,15 +205,15 @@ initialize
 	suspended:= OrderedCollection new.! !
 
 
-!CustomerBook methodsFor: 'abstractions' stamp: 'santi 4/13/2023 13:03:37'!
-removesElement: elementToRemove fromCollection: collectionToModify
+!CustomerBook methodsFor: 'abstractions' stamp: 'santi 4/13/2023 13:52:36'!
+removesElement: elementToRemove fromCollection: collectionToModify ifFound: blockOfCode
  
 	1 to: collectionToModify size do: 
 	[ :index |
 		elementToRemove = (collectionToModify at: index)
 			ifTrue: [
 				collectionToModify removeAt: index.
-				^[^elementToRemove] .
+				blockOfCode value .
 			] 
 	].
 	
@@ -243,11 +243,11 @@ numberOfSuspendedCustomers
 	
 	^suspended size! !
 
-!CustomerBook methodsFor: 'customer management' stamp: 'santi 4/13/2023 13:13:40'!
+!CustomerBook methodsFor: 'customer management' stamp: 'santi 4/13/2023 14:09:38'!
 removeCustomerNamed: aName 
  
-	self removesElement: aName fromCollection: active . 
-	self removesElement: aName fromCollection: suspended .
+	self removesElement: aName fromCollection: active ifFound: [^aName] . 
+	self removesElement: aName fromCollection: suspended ifFound: [^aName] .
 
 	^ NotFound signal.! !
 
