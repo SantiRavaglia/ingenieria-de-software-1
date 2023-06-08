@@ -1,0 +1,1256 @@
+
+
+----QUIT----(20 March 2023 11:15:29) CuisUniversity-5706.image priorSource: 4313282!
+
+----STARTUP---- (20 March 2023 11:15:29) as /Users/hernan/Documents/Cuis/5.0-64Bits/Cuis-University-Installer/CuisUniversity-5706.image!
+
+
+----QUIT----(20 March 2023 11:15:30) CuisUniversity-5706.image priorSource: 8712809!
+
+----STARTUP---- (8 June 2023 10:44:06) as C:\Users\Santiago\Desktop\UBA\Inge1\Ej9\windows64\CuisUniversity-5706.image!
+
+
+Object subclass: #Carrito
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'TusLibros'!
+
+!classDefinition: #Carrito category: 'TusLibros' stamp: 'aa 6/8/2023 10:48:09'!
+Object subclass: #Carrito
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'TusLibros'!
+
+TestCase subclass: #CarritoTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'TusLibros'!
+
+!classDefinition: #CarritoTest category: 'TusLibros' stamp: 'aa 6/8/2023 10:48:19'!
+TestCase subclass: #CarritoTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'TusLibros'!
+!CarritoTest methodsFor: 'no messages' stamp: 'aa 6/8/2023 11:05:42'!
+test01NewCartIsEmpty
+
+	| carrito |
+
+	carrito := 	Carrito createCart .
+	self assert: $a equals: carrito! !
+
+!classRenamed: #Carrito as: #Cart stamp: 'aa 6/8/2023 11:05:47'!
+Smalltalk renameClassNamed: #Carrito as: #Cart!
+!CarritoTest methodsFor: 'as yet unclassified' stamp: 'aa 6/8/2023 11:05:47' prior: 50603960!
+test01NewCartIsEmpty
+
+	| carrito |
+
+	carrito := 	Cart createCart .
+	self assert: $a equals: carrito! !
+
+!classRenamed: #CarritoTest as: #CartTest stamp: 'aa 6/8/2023 11:06:01'!
+Smalltalk renameClassNamed: #CarritoTest as: #CartTest!
+!CartTest methodsFor: 'as yet unclassified' stamp: 'aa 6/8/2023 11:22:31' prior: 50603970!
+test01NewCartIsEmpty
+
+	| carrito |
+
+	carrito := 	Cart createCart .
+	self assert: 1 equals: carrito items! !
+!CartTest methodsFor: 'as yet unclassified' stamp: 'aa 6/8/2023 11:24:43' prior: 50603981!
+test01NewCartIsEmpty
+
+	| carrito |
+
+	carrito := 	Cart createCart .
+	self assert: Dictionary new equals: carrito items! !
+
+!testRun: #CartTest #test01NewCartIsEmpty stamp: 'aa 6/8/2023 11:24:44'!
+ERROR!
+!Cart class methodsFor: 'instance creation' stamp: 'aa 6/8/2023 11:24:56'!
+createCart
+	"DO NOT FORGET TO RENAME COLLABORATORS AND REMOVE THIS COMMENT!!!!"
+	self shouldBeImplemented.
+	^self new initializeCreateCart! !
+!Cart class methodsFor: 'instance creation' stamp: 'aa 6/8/2023 11:25:06' prior: 50603997!
+createCart
+	^self new initializeCart! !
+
+!testRun: #CartTest #test01NewCartIsEmpty stamp: 'aa 6/8/2023 11:25:08'!
+ERROR!
+!Cart methodsFor: 'initialization' stamp: 'aa 6/8/2023 11:25:15'!
+initializeCart
+	self shouldBeImplemented.! !
+
+!classDefinition: #Cart category: 'TusLibros' stamp: 'aa 6/8/2023 11:25:30'!
+Object subclass: #Cart
+	instanceVariableNames: 'items'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'TusLibros'!
+!Cart methodsFor: 'initialization' stamp: 'aa 6/8/2023 11:25:28' prior: 50604011!
+initializeCart
+	items := Dictionary new! !
+
+!testRun: #CartTest #test01NewCartIsEmpty stamp: 'aa 6/8/2023 11:25:31'!
+ERROR!
+!Cart methodsFor: 'getters' stamp: 'aa 6/8/2023 11:25:39'!
+items
+	self shouldBeImplemented.
+	^items! !
+!Cart methodsFor: 'getters' stamp: 'aa 6/8/2023 11:25:47' prior: 50604028!
+items
+	^items! !
+
+!testRun: #CartTest #test01NewCartIsEmpty stamp: 'aa 6/8/2023 11:25:48'!
+PASSED!
+
+!testRun: #CartTest #test01NewCartIsEmpty stamp: 'aa 6/8/2023 11:25:48'!
+PASSED!
+!Cart methodsFor: 'getters' stamp: 'aa 6/8/2023 11:26:07' prior: 50604032!
+items
+	^items copy! !
+
+!testRun: #CartTest #test01NewCartIsEmpty stamp: 'aa 6/8/2023 11:26:11'!
+PASSED!
+
+!testRun: #CartTest #test01NewCartIsEmpty stamp: 'aa 6/8/2023 11:26:11'!
+PASSED!
+!CartTest methodsFor: 'as yet unclassified' stamp: 'aa 6/8/2023 11:31:19'!
+test02GivenACartWhenAddingValidItemsThenAreAddedSuccesfuly
+
+	| carrito item |
+
+	carrito := 	Cart createCart .
+	carrito addToCart: item .
+	self assert: Dictionary new equals: carrito items! !
+
+!classDefinition: #Book category: 'TusLibros' stamp: 'aa 6/8/2023 11:33:25'!
+Object subclass: #Book
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'TusLibros'!
+!CartTest methodsFor: 'as yet unclassified' stamp: 'aa 6/8/2023 11:33:14' prior: 50604049!
+test02GivenACartWhenAddingValidItemsThenAreAddedSuccesfuly
+
+	| carrito item |
+
+	item := Book isbn: 23 .
+	carrito := 	Cart createCart .
+	carrito addToCart: item amount: 1 .
+	self assert: Dictionary new equals: carrito items! !
+
+Object subclass: #Book
+	instanceVariableNames: 'isbn'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'TusLibros'!
+
+!classDefinition: #Book category: 'TusLibros' stamp: 'aa 6/8/2023 11:33:41'!
+Object subclass: #Book
+	instanceVariableNames: 'isbn'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'TusLibros'!
+!Book methodsFor: 'no messages' stamp: 'aa 6/8/2023 11:34:28'!
+isbn 
+
+	^isbn! !
+
+!testRun: #CartTest #test02GivenACartWhenAddingValidItemsThenAreAddedSuccesfuly stamp: 'aa 6/8/2023 11:34:35'!
+ERROR!
+
+!testRun: #CartTest #test02GivenACartWhenAddingValidItemsThenAreAddedSuccesfuly stamp: 'aa 6/8/2023 11:34:35'!
+ERROR!
+!Book class methodsFor: 'instance creation' stamp: 'aa 6/8/2023 11:34:40'!
+isbn: aSmallInteger 
+	"DO NOT FORGET TO RENAME COLLABORATORS AND REMOVE THIS COMMENT!!!!"
+	self shouldBeImplemented.
+	^self new initializeIsbn: aSmallInteger ! !
+!Book class methodsFor: 'instance creation' stamp: 'aa 6/8/2023 11:34:57' prior: 50604095!
+isbn: isbn 
+	^self new initialize: isbn ! !
+
+!testRun: #CartTest #test02GivenACartWhenAddingValidItemsThenAreAddedSuccesfuly stamp: 'aa 6/8/2023 11:34:58'!
+ERROR!
+
+!classDefinition: #Book category: 'TusLibros' stamp: 'aa 6/8/2023 11:35:17'!
+Object subclass: #Book
+	instanceVariableNames: 'isbn isbn_CHANGE_ME'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'TusLibros'!
+!Book class methodsFor: 'instance creation' stamp: 'aa 6/8/2023 11:35:42' prior: 50604103!
+isbn: AnIsbn 
+	^self new initialize: AnIsbn ! !
+
+!testRun: #CartTest #test02GivenACartWhenAddingValidItemsThenAreAddedSuccesfuly stamp: 'aa 6/8/2023 11:35:43'!
+ERROR!
+
+!classDefinition: #Book category: 'TusLibros' stamp: 'aa 6/8/2023 11:35:52'!
+Object subclass: #Book
+	instanceVariableNames: 'isbn isbn_CHANGE_ME anIsbn'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'TusLibros'!
+!Book methodsFor: 'initialization' stamp: 'aa 6/8/2023 11:35:52'!
+initialize: AnIsbn 
+	self shouldBeImplemented.
+	anIsbn := AnIsbn.! !
+!Book methodsFor: 'initialization' stamp: 'aa 6/8/2023 11:35:59' prior: 50604133!
+initialize: AnIsbn 
+	isbn := AnIsbn.! !
+
+!testRun: #CartTest #test02GivenACartWhenAddingValidItemsThenAreAddedSuccesfuly stamp: 'aa 6/8/2023 11:36:03'!
+ERROR!
+!Cart methodsFor: 'adding' stamp: 'aa 6/8/2023 11:36:27'!
+addToCart: item amount: aRenameMe1 
+	self shouldBeImplemented.! !
+!Cart methodsFor: 'adding' stamp: 'aa 6/8/2023 11:37:59' prior: 50604145!
+addToCart: anItem amount: anAmount 
+	
+	items add: anItem->anAmount! !
+
+!testRun: #CartTest #test02GivenACartWhenAddingValidItemsThenAreAddedSuccesfuly stamp: 'aa 6/8/2023 11:38:00'!
+FAILURE!
+
+!testRun: #CartTest #test02GivenACartWhenAddingValidItemsThenAreAddedSuccesfuly stamp: 'aa 6/8/2023 11:38:05'!
+PASSED!
+!Cart methodsFor: 'initialization' stamp: 'aa 6/8/2023 11:38:22' prior: 50604022!
+initializeCart
+	
+	items := Dictionary new
+	! !
+!Cart methodsFor: 'getters' stamp: 'aa 6/8/2023 11:38:26' prior: 50604040!
+items
+
+	^items copy! !
+!CartTest methodsFor: 'as yet unclassified' stamp: 'aa 6/8/2023 11:41:17' prior: 50604064!
+test02GivenACartWhenAddingValidItemsThenAreAddedSuccesfuly
+
+	| carrito item result |
+
+	item := Book isbn: 23 .
+	carrito := 	Cart createCart .
+	carrito addToCart: item amount: 1 .
+	result := Dictionary new add: item -> 1 .
+	self assert: Dictionary new equals: carrito items! !
+!CartTest methodsFor: 'as yet unclassified' stamp: 'aa 6/8/2023 11:41:23' prior: 50604171!
+test02GivenACartWhenAddingValidItemsThenAreAddedSuccesfuly
+
+	| carrito item result |
+
+	item := Book isbn: 23 .
+	carrito := 	Cart createCart .
+	carrito addToCart: item amount: 1 .
+	result := Dictionary new add: item -> 1 .
+	self assert: result equals: carrito items! !
+!CartTest methodsFor: 'as yet unclassified' stamp: 'aa 6/8/2023 11:41:41' prior: 50603988!
+test01NewCartIsEmpty
+
+	| carrito result |
+
+	carrito := 	Cart createCart .
+	result := Dictionary new.
+	self assert: result equals: carrito items! !
+
+!testRun: #CartTest #test01NewCartIsEmpty stamp: 'aa 6/8/2023 11:41:45'!
+PASSED!
+
+!testRun: #CartTest #test02GivenACartWhenAddingValidItemsThenAreAddedSuccesfuly stamp: 'aa 6/8/2023 11:41:45'!
+FAILURE!
+
+!testRun: #CartTest #test02GivenACartWhenAddingValidItemsThenAreAddedSuccesfuly stamp: 'aa 6/8/2023 11:41:45'!
+FAILURE!
+!CartTest methodsFor: 'as yet unclassified' stamp: 'aa 6/8/2023 11:42:15' prior: 50604183!
+test02GivenACartWhenAddingValidItemsThenAreAddedSuccesfuly
+
+	| carrito item result |
+
+	item := Book isbn: 23 .
+	carrito := 	Cart createCart .
+	carrito addToCart: item amount: 1 .
+	result := Dictionary new add: item -> 1 .
+	self assert: result copy equals: carrito items! !
+
+!testRun: #CartTest #test02GivenACartWhenAddingValidItemsThenAreAddedSuccesfuly stamp: 'aa 6/8/2023 11:42:16'!
+FAILURE!
+!CartTest methodsFor: 'as yet unclassified' stamp: 'aa 6/8/2023 11:42:24' prior: 50604213!
+test02GivenACartWhenAddingValidItemsThenAreAddedSuccesfuly
+
+	| carrito item result |
+
+	item := Book isbn: 23 .
+	carrito := 	Cart createCart .
+	carrito addToCart: item amount: 1 .
+	result := Dictionary new add: item -> 1 .
+	self assert: result equals: carrito items! !
+!CartTest methodsFor: 'as yet unclassified' stamp: 'aa 6/8/2023 11:42:49' prior: 50604229!
+test02GivenACartWhenAddingValidItemsThenAreAddedSuccesfuly
+
+	| carrito item result |
+
+	item := Book isbn: 23 .
+	carrito := 	Cart createCart .
+	carrito addToCart: item amount: 1 .
+	result := Dictionary new .
+	result add: item -> 1 .
+	self assert: result equals: carrito items! !
+
+!testRun: #CartTest #test02GivenACartWhenAddingValidItemsThenAreAddedSuccesfuly stamp: 'aa 6/8/2023 11:42:50'!
+PASSED!
+
+!testRun: #CartTest #test01NewCartIsEmpty stamp: 'aa 6/8/2023 11:42:50'!
+PASSED!
+
+!testRun: #CartTest #test02GivenACartWhenAddingValidItemsThenAreAddedSuccesfuly stamp: 'aa 6/8/2023 11:42:50'!
+PASSED!
+
+item := Book isbn: 23 .!
+
+	carrito := 	Cart createCart .!
+
+	carrito addToCart: item amount: 1 .!
+
+	result := Dictionary new .!
+
+	result add: item -> 1 .!
+
+result at: item!
+
+carrito items at: item !
+!CartTest methodsFor: 'as yet unclassified' stamp: 'aa 6/8/2023 11:46:34'!
+test02GivenACartWhenAddingInvalidItemsThenPromptsError
+
+	| carrito item result |
+
+	item := Book isbn: 23 .
+	carrito := 	Cart createCart .
+	carrito addToCart: item amount: 1 .
+	result := Dictionary new .
+	result add: item -> 1 .
+	self assert: result equals: carrito items! !
+!CartTest methodsFor: 'as yet unclassified' stamp: 'aa 6/8/2023 11:46:55'!
+test03GivenACartWhenAddingUnavailableItemsThenPromptsError
+
+	| carrito item result |
+
+	item := Book isbn: 23 .
+	carrito := 	Cart createCart .
+	carrito addToCart: item amount: 1 .
+	result := Dictionary new .
+	result add: item -> 1 .
+	self assert: result equals: carrito items! !
+
+!methodRemoval: CartTest #test02GivenACartWhenAddingInvalidItemsThenPromptsError stamp: 'aa 6/8/2023 11:46:55'!
+test02GivenACartWhenAddingInvalidItemsThenPromptsError
+
+	| carrito item result |
+
+	item := Book isbn: 23 .
+	carrito := 	Cart createCart .
+	carrito addToCart: item amount: 1 .
+	result := Dictionary new .
+	result add: item -> 1 .
+	self assert: result equals: carrito items!
+!CartTest methodsFor: 'as yet unclassified' stamp: 'aa 6/8/2023 11:47:01'!
+test02GivenACartWhenAddingAvailableItemsThenAreAddedSuccesfuly
+
+	| carrito item result |
+
+	item := Book isbn: 23 .
+	carrito := 	Cart createCart .
+	carrito addToCart: item amount: 1 .
+	result := Dictionary new .
+	result add: item -> 1 .
+	self assert: result equals: carrito items! !
+
+!methodRemoval: CartTest #test02GivenACartWhenAddingValidItemsThenAreAddedSuccesfuly stamp: 'aa 6/8/2023 11:47:01'!
+test02GivenACartWhenAddingValidItemsThenAreAddedSuccesfuly
+
+	| carrito item result |
+
+	item := Book isbn: 23 .
+	carrito := 	Cart createCart .
+	carrito addToCart: item amount: 1 .
+	result := Dictionary new .
+	result add: item -> 1 .
+	self assert: result equals: carrito items!
+!CartTest methodsFor: 'as yet unclassified' stamp: 'aa 6/8/2023 11:49:39' prior: 50604280!
+test03GivenACartWhenAddingUnavailableItemsThenPromptsError
+
+	| carrito item result |
+
+	item := Book isbn: 23 .
+	carrito := 	Cart createCart .
+	self assert: result equals: carrito items .
+	
+	self
+		should: [carrito addToCart: item amount: 1 .]
+		raise: IndeterminateOperationException
+		withMessageText: 'The Division operation is indeterminate between Minus Infinity and meter/second'! !
+!CartTest methodsFor: 'as yet unclassified' stamp: 'aa 6/8/2023 11:49:47' prior: 50604328!
+test03GivenACartWhenAddingUnavailableItemsThenPromptsError
+
+	| carrito item |
+
+	item := Book isbn: 23 .
+	carrito := 	Cart createCart .
+	
+	self
+		should: [carrito addToCart: item amount: 1 .]
+		raise: IndeterminateOperationException
+		withMessageText: 'The Division operation is indeterminate between Minus Infinity and meter/second'! !
+
+!classDefinition: #Store category: 'TusLibros' stamp: 'aa 6/8/2023 11:50:45'!
+Object subclass: #Store
+	instanceVariableNames: 'stock'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'TusLibros'!
+!CartTest methodsFor: 'as yet unclassified' stamp: 'aa 6/8/2023 11:50:32' prior: 50604304!
+test02GivenACartWhenAddingAvailableItemsThenAreAddedSuccesfuly
+
+	| carrito store item result |
+
+	item := Book isbn: 23 .
+	store := Store new .
+	store addStock: item amount: 2 .
+	carrito := 	Cart createCart .
+	carrito addToCart: item amount: 1 .
+	result := Dictionary new .
+	result add: item -> 1 .
+	self assert: result equals: carrito items! !
+
+!testRun: #CartTest #test02GivenACartWhenAddingAvailableItemsThenAreAddedSuccesfuly stamp: 'aa 6/8/2023 11:50:49'!
+ERROR!
+
+!testRun: #CartTest #test02GivenACartWhenAddingAvailableItemsThenAreAddedSuccesfuly stamp: 'aa 6/8/2023 11:51:00'!
+ERROR!
+!Store methodsFor: 'manage stock' stamp: 'aa 6/8/2023 11:51:13'!
+addStock: item amount: aRenameMe1 
+	self shouldBeImplemented.! !
+!Store methodsFor: 'manage stock' stamp: 'aa 6/8/2023 11:51:36' prior: 50604384!
+addStock: anItem amount: anAmount 
+	
+	stock add: anItem -> anAmount! !
+
+!testRun: #CartTest #test02GivenACartWhenAddingAvailableItemsThenAreAddedSuccesfuly stamp: 'aa 6/8/2023 11:51:36'!
+ERROR!
+!Store methodsFor: 'initialization' stamp: 'aa 6/8/2023 11:52:07' overrides: 16920235!
+initialize
+
+	stock := Dictionary new! !
+
+!testRun: #CartTest #test02GivenACartWhenAddingAvailableItemsThenAreAddedSuccesfuly stamp: 'aa 6/8/2023 11:52:14'!
+PASSED!
+!Cart class methodsFor: 'instance creation' stamp: 'aa 6/8/2023 11:54:15'!
+createCartFor: aStore
+	^self new initializeCartWith: aStore! !
+
+!methodRemoval: Cart class #createCart stamp: 'aa 6/8/2023 11:54:18'!
+createCart
+	^self new initializeCart!
+
+!classDefinition: #Cart category: 'TusLibros' stamp: 'aa 6/8/2023 11:54:38'!
+Object subclass: #Cart
+	instanceVariableNames: 'items store'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'TusLibros'!
+!Cart methodsFor: 'initialization' stamp: 'aa 6/8/2023 11:54:36'!
+initializeCartWith: aStore
+	
+	items := Dictionary new .
+	store := aStore ! !
+!CartTest methodsFor: 'as yet unclassified' stamp: 'aa 6/8/2023 11:54:56' prior: 50604195!
+test01NewCartIsEmpty
+
+	| carrito store result |
+
+	carrito := 	Cart createCart .
+	result := Dictionary new.
+	self assert: result equals: carrito items! !
+!CartTest methodsFor: 'as yet unclassified' stamp: 'aa 6/8/2023 11:55:09' prior: 50604426!
+test01NewCartIsEmpty
+
+	| carrito store result |
+
+	store := Store new .
+	carrito := 	Cart initializeCartWith:store .
+	result := Dictionary new.
+	self assert: result equals: carrito items! !
+!CartTest methodsFor: 'as yet unclassified' stamp: 'aa 6/8/2023 11:55:21' prior: 50604363!
+test02GivenACartWhenAddingAvailableItemsThenAreAddedSuccesfuly
+
+	| carrito store item result |
+
+	item := Book isbn: 23 .
+	store := Store new .
+	store addStock: item amount: 2 .
+	carrito := 	Cart initializeCartWith: store .
+	carrito addToCart: item amount: 1 .
+	result := Dictionary new .
+	result add: item -> 1 .
+	self assert: result equals: carrito items! !
+!CartTest methodsFor: 'as yet unclassified' stamp: 'aa 6/8/2023 11:55:37' prior: 50604343!
+test03GivenACartWhenAddingUnavailableItemsThenPromptsError
+
+	| carrito store item |
+
+	item := Book isbn: 23 .
+	store := Store new .
+	carrito := 	Cart initializeCartWith: store .
+	
+	self
+		should: [carrito addToCart: item amount: 1 .]
+		raise: IndeterminateOperationException
+		withMessageText: 'The Division operation is indeterminate between Minus Infinity and meter/second'! !
+!CartTest methodsFor: 'as yet unclassified' stamp: 'aa 6/8/2023 11:57:28' prior: 50604443!
+test02GivenACartWhenAddingAvailableItemsThenAreAddedSuccesfuly
+
+	| carrito store item result |
+
+	item := Book isbn: 23 .
+	store := Store new .
+	store addStock: item amount: 2 .
+	
+	carrito := 	Cart initializeCartWith: store .
+	carrito addToCart: item amount: 1 .
+	
+	result := Dictionary new .
+	result add: item -> 1 .
+	
+	self assert: result equals: carrito items! !
+
+!methodRemoval: Cart #initializeCart stamp: 'aa 6/8/2023 11:57:36'!
+initializeCart
+	
+	items := Dictionary new
+	!
+!Cart methodsFor: 'adding' stamp: 'aa 6/8/2023 11:59:31' prior: 50604150!
+addToCart: anItem amount: anAmount 
+	
+	store checkStockIsEnough: anItem amount: anAmount ifTrue: [	items add: anItem->anAmount ] ifFalse: [ self error: Cart errorStockIsNotEnough ]! !
+!Cart methodsFor: 'adding' stamp: 'aa 6/8/2023 11:59:44' prior: 50604491!
+addToCart: anItem amount: anAmount 
+	
+	(store checkStockIsEnough: anItem amount: anAmount) ifTrue: [	items add: anItem->anAmount ] ifFalse: [ self error: Cart errorStockIsNotEnough ]! !
+!Cart class methodsFor: 'nil' stamp: 'aa 6/8/2023 12:00:03'!
+errorStockIsNotEnough
+
+	^'Not enough stock of that item'! !
+!Cart methodsFor: 'adding' stamp: 'aa 6/8/2023 12:03:41' prior: 50604500!
+addToCart: anItem amount: anAmount 
+	
+	(store checkStockIsEnough: anItem amount: anAmount) 
+		ifTrue: [	items add: anItem->anAmount ] 
+		ifFalse: [ self error: Cart errorStockIsNotEnough ]! !
+!Store methodsFor: 'manage stock' stamp: 'aa 6/8/2023 12:05:56'!
+checkStockIsEnough: anItem amount: anAmount
+
+	(stock at: anItem ifAbsent: [ ^false ]) >= anAmount ifFalse: [ ^false ] .
+	^true! !
+
+!testRun: #CartTest #test02GivenACartWhenAddingAvailableItemsThenAreAddedSuccesfuly stamp: 'aa 6/8/2023 12:06:03'!
+ERROR!
+
+!testRun: #CartTest #test02GivenACartWhenAddingAvailableItemsThenAreAddedSuccesfuly stamp: 'aa 6/8/2023 12:06:03'!
+ERROR!
+!CartTest methodsFor: 'as yet unclassified' stamp: 'aa 6/8/2023 12:06:32' prior: 50604473!
+test02GivenACartWhenAddingAvailableItemsThenAreAddedSuccesfuly
+
+	| carrito store item result |
+
+	item := Book isbn: 23 .
+	store := Store new .
+	store addStock: item amount: 2 .
+	
+	carrito := 	Cart createCartFor: store .
+	carrito addToCart: item amount: 1 .
+	
+	result := Dictionary new .
+	result add: item -> 1 .
+	
+	self assert: result equals: carrito items! !
+!CartTest methodsFor: 'as yet unclassified' stamp: 'aa 6/8/2023 12:06:35' prior: 50604434!
+test01NewCartIsEmpty
+
+	| carrito store result |
+
+	store := Store new .
+	carrito := 	Cart createCartFor: store .
+	result := Dictionary new.
+	self assert: result equals: carrito items! !
+!CartTest methodsFor: 'as yet unclassified' stamp: 'aa 6/8/2023 12:06:38' prior: 50604458!
+test03GivenACartWhenAddingUnavailableItemsThenPromptsError
+
+	| carrito store item |
+
+	item := Book isbn: 23 .
+	store := Store new .
+	carrito := 	Cart createCartFor: store .
+	
+	self
+		should: [carrito addToCart: item amount: 1 .]
+		raise: IndeterminateOperationException
+		withMessageText: 'The Division operation is indeterminate between Minus Infinity and meter/second'! !
+
+!testRun: #CartTest #test02GivenACartWhenAddingAvailableItemsThenAreAddedSuccesfuly stamp: 'aa 6/8/2023 12:06:42'!
+PASSED!
+!CartTest methodsFor: 'as yet unclassified' stamp: 'aa 6/8/2023 12:07:10' prior: 50604561!
+test03GivenACartWhenAddingUnavailableItemsThenPromptsError
+
+	| carrito store item |
+
+	item := Book isbn: 23 .
+	store := Store new .
+	carrito := 	Cart createCartFor: store .
+	
+	self
+		should: [carrito addToCart: item amount: 1 .]
+		raise: Cart errorStockIsNotEnough 
+		withMessageText: 'Stock is not enough'! !
+!CartTest methodsFor: 'as yet unclassified' stamp: 'aa 6/8/2023 12:07:20' prior: 50604580!
+test03GivenACartWhenAddingUnavailableItemsThenPromptsError
+
+	| carrito store item |
+
+	item := Book isbn: 23 .
+	store := Store new .
+	carrito := 	Cart createCartFor: store .
+	
+	self
+		should: [carrito addToCart: item amount: 1 .]
+		raise: Cart errorStockIsNotEnough 
+		withMessageText: 'Not enough stock of that item'! !
+
+!testRun: #CartTest #test03GivenACartWhenAddingUnavailableItemsThenPromptsError stamp: 'aa 6/8/2023 12:16:58'!
+ERROR!
+
+!testRun: #CartTest #test03GivenACartWhenAddingUnavailableItemsThenPromptsError stamp: 'aa 6/8/2023 12:17:02'!
+ERROR!
+
+!testRun: #CartTest #test03GivenACartWhenAddingUnavailableItemsThenPromptsError stamp: 'aa 6/8/2023 12:17:18'!
+ERROR!
+
+!testRun: #CartTest #test03GivenACartWhenAddingUnavailableItemsThenPromptsError stamp: 'aa 6/8/2023 12:17:18'!
+ERROR!
+!Cart methodsFor: 'adding' stamp: 'aa 6/8/2023 12:17:33' prior: 50604513!
+addToCart: anItem amount: anAmount 
+	
+	(store checkStockIsEnough: anItem amount: anAmount) 
+		ifTrue: [	items add: anItem->anAmount ] 
+		ifFalse: [ ^self error: Cart errorStockIsNotEnough ]! !
+
+!testRun: #CartTest #test03GivenACartWhenAddingUnavailableItemsThenPromptsError stamp: 'aa 6/8/2023 12:17:36'!
+ERROR!
+
+!testRun: #CartTest #test03GivenACartWhenAddingUnavailableItemsThenPromptsError stamp: 'aa 6/8/2023 12:17:36'!
+ERROR!
+
+!testRun: #CartTest #test03GivenACartWhenAddingUnavailableItemsThenPromptsError stamp: 'aa 6/8/2023 12:17:38'!
+ERROR!
+!CartTest methodsFor: 'as yet unclassified' stamp: 'aa 6/8/2023 12:19:21' prior: 50604593!
+test03GivenACartWhenAddingUnavailableItemsThenPromptsError
+
+	| carrito store item |
+
+	item := Book isbn: 23 .
+	store := Store new .
+	carrito := 	Cart createCartFor: store .
+
+	self 
+		should: [ carrito addToCart: item amount: 1 ]
+		raise: Error - MessageNotUnderstood 
+		withExceptionDo: [ :anError |
+			self assert: Cart errorStockIsNotEnough equals: anError messageText. ]! !
+
+!testRun: #CartTest #test03GivenACartWhenAddingUnavailableItemsThenPromptsError stamp: 'aa 6/8/2023 12:19:22'!
+PASSED!
+!CartTest methodsFor: 'as yet unclassified' stamp: 'aa 6/8/2023 12:19:37'!
+test04GivenACartThenCantAddNegativeAmountOfItems
+
+	| carrito store item |
+
+	item := Book isbn: 23 .
+	store := Store new .
+	carrito := 	Cart createCartFor: store .
+
+	self 
+		should: [ carrito addToCart: item amount: 1 ]
+		raise: Error - MessageNotUnderstood 
+		withExceptionDo: [ :anError |
+			self assert: Cart errorStockIsNotEnough equals: anError messageText. ]! !
+!CartTest methodsFor: 'as yet unclassified' stamp: 'aa 6/8/2023 12:19:57' prior: 50604660!
+test04GivenACartThenCantAddNegativeAmountOfItems
+
+	| carrito store item |
+
+	item := Book isbn: 23 .
+	store := Store new .
+	carrito := 	Cart createCartFor: store .
+
+	self 
+		should: [ carrito addToCart: item amount: -1 ]
+		raise: Error - MessageNotUnderstood 
+		withExceptionDo: [ :anError |
+			self assert: Cart errorStockIsNotEnough equals: anError messageText. ]! !
+!Cart methodsFor: 'adding' stamp: 'aa 6/8/2023 12:22:48' prior: 50604621!
+addToCart: anItem amount: anAmount 
+	
+	anAmount < 1 ifTrue: [ self error: Cart errorCantAddNoItems ] .
+	(store checkStockIsEnough: anItem amount: anAmount) 
+		ifTrue: [	items add: anItem->anAmount ] 
+		ifFalse: [ ^self error: Cart errorStockIsNotEnough ]! !
+!Cart class methodsFor: 'errors' stamp: 'aa 6/8/2023 12:23:18'!
+errorCantAddNoItems
+
+	^'At least one item has to be added'! !
+!Cart class methodsFor: 'errors' stamp: 'aa 6/8/2023 12:23:26' prior: 50604700!
+errorCantAddNoItems
+
+	^'Amount has to be greater than 0'! !
+
+!testRun: #CartTest #test04GivenACartThenCantAddNegativeAmountOfItems stamp: 'aa 6/8/2023 12:23:31'!
+FAILURE!
+
+!testRun: #CartTest #test04GivenACartThenCantAddNegativeAmountOfItems stamp: 'aa 6/8/2023 12:23:31'!
+FAILURE!
+!CartTest methodsFor: 'as yet unclassified' stamp: 'aa 6/8/2023 12:23:39' prior: 50604675!
+test04GivenACartThenCantAddNegativeAmountOfItems
+
+	| carrito store item |
+
+	item := Book isbn: 23 .
+	store := Store new .
+	carrito := 	Cart createCartFor: store .
+
+	self 
+		should: [ carrito addToCart: item amount: -1 ]
+		raise: Error - MessageNotUnderstood 
+		withExceptionDo: [ :anError |
+			self assert: Cart errorCantAddNoItems equals: anError messageText. ]! !
+
+!testRun: #CartTest #test04GivenACartThenCantAddNegativeAmountOfItems stamp: 'aa 6/8/2023 12:23:41'!
+PASSED!
+
+!testRun: #CartTest #test01NewCartIsEmpty stamp: 'aa 6/8/2023 12:23:41'!
+PASSED!
+
+!testRun: #CartTest #test02GivenACartWhenAddingAvailableItemsThenAreAddedSuccesfuly stamp: 'aa 6/8/2023 12:23:41'!
+PASSED!
+
+!testRun: #CartTest #test03GivenACartWhenAddingUnavailableItemsThenPromptsError stamp: 'aa 6/8/2023 12:23:41'!
+PASSED!
+
+!testRun: #CartTest #test04GivenACartThenCantAddNegativeAmountOfItems stamp: 'aa 6/8/2023 12:23:41'!
+PASSED!
+
+----SNAPSHOT----(8 June 2023 12:31:16) CuisUniversity-5706.image priorSource: 8713034!
+!CartTest methodsFor: 'as yet unclassified' stamp: 'aa 6/8/2023 12:35:48'!
+test05GivenACartWhenAddingValidItemsThenAreAddedSuccesfuly
+
+	| carrito store item result |
+
+	item := Book isbn: 23 .
+	store := Store new .
+	store addStock: item amount: 2 .
+	
+	carrito := 	Cart createCartFor: store .
+	carrito addToCart: item amount: 1 .
+	
+	result := Dictionary new .
+	result add: item -> 1 .
+	
+	self assert: result equals: carrito items! !
+
+!classDefinition: #Store category: 'TusLibros' stamp: 'aa 6/8/2023 12:48:33'!
+Object subclass: #Store
+	instanceVariableNames: 'stock booksAvailable'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'TusLibros'!
+!Store methodsFor: 'manage isbn' stamp: 'aa 6/8/2023 12:48:31'!
+addISBN: anISBN
+
+	booksAvailable := Set new! !
+!Store methodsFor: 'manage isbn' stamp: 'aa 6/8/2023 12:49:44'!
+checkISBN: anISBN
+
+	booksAvailable includes: anISBN ! !
+!Store methodsFor: 'manage isbn' stamp: 'aa 6/8/2023 12:51:05' prior: 50604771!
+addISBN: anISBN
+
+	! !
+!Store methodsFor: 'initialization' stamp: 'aa 6/8/2023 12:51:11' prior: 50604398 overrides: 16920235!
+initialize
+
+	booksAvailable := Set new .
+	stock := Dictionary new! !
+!Store methodsFor: 'manage isbn' stamp: 'aa 6/8/2023 12:51:21' prior: 50604780!
+addISBN: anISBN
+
+	booksAvailable add: anISBN ! !
+!Store methodsFor: 'manage isbn' stamp: 'aa 6/8/2023 12:51:41'!
+checkISBNIsValid: anISBN
+
+	booksAvailable includes: anISBN ! !
+
+!methodRemoval: Store #checkISBN: stamp: 'aa 6/8/2023 12:51:41'!
+checkISBN: anISBN
+
+	booksAvailable includes: anISBN !
+!Cart methodsFor: 'adding' stamp: 'aa 6/8/2023 12:53:04' prior: 50604689!
+addToCart: anItem amount: anAmount 
+	
+	(store checkISBNIsValid: anItem isbn) ifFalse: [ ^self error: Cart errorISBNIsNotValid ] .
+	anAmount < 1 ifTrue: [ ^self error: Cart errorCantAddNoItems ] .
+	(store checkStockIsEnough: anItem amount: anAmount) 
+		ifTrue: [	items add: anItem->anAmount ] 
+		ifFalse: [ ^self error: Cart errorStockIsNotEnough ]! !
+!Cart methodsFor: 'adding' stamp: 'aa 6/8/2023 12:53:18' prior: 50604802!
+addToCart: anItem amount: anAmount 
+	
+	(store checkISBNIsValid: anItem isbn) ifFalse: [ ^self error: Cart errorISBNIsNotValid ] .
+	
+	anAmount < 1 ifTrue: [ ^self error: Cart errorCantAddNoItems ] .
+	
+	(store checkStockIsEnough: anItem amount: anAmount) 
+		ifTrue: [	items add: anItem->anAmount ] 
+		ifFalse: [ ^self error: Cart errorStockIsNotEnough ]! !
+!Cart class methodsFor: 'errors' stamp: 'aa 6/8/2023 12:53:58'!
+errorISBNIsNotValid
+
+	^'Book ISBN is not available'! !
+!Cart class methodsFor: 'errors' stamp: 'aa 6/8/2023 12:54:07'!
+errorISBNIsNotAvailable
+
+	^'Book ISBN is not available'! !
+
+!methodRemoval: Cart class #errorISBNIsNotValid stamp: 'aa 6/8/2023 12:54:10'!
+errorISBNIsNotValid
+
+	^'Book ISBN is not available'!
+!Cart methodsFor: 'adding' stamp: 'aa 6/8/2023 12:54:15' prior: 50604816!
+addToCart: anItem amount: anAmount 
+	
+	(store checkISBNIsValid: anItem isbn) ifFalse: [ ^self error: Cart errorISBNIsNotAvailable ] .
+	
+	anAmount < 1 ifTrue: [ ^self error: Cart errorCantAddNoItems ] .
+	
+	(store checkStockIsEnough: anItem amount: anAmount) 
+		ifTrue: [	items add: anItem->anAmount ] 
+		ifFalse: [ ^self error: Cart errorStockIsNotEnough ]! !
+!Store methodsFor: 'manage isbn' stamp: 'aa 6/8/2023 12:54:43'!
+checkISBNIsAvailable: anISBN
+
+	booksAvailable includes: anISBN ! !
+!Cart methodsFor: 'as yet unclassified' stamp: 'aa 6/8/2023 12:54:43' prior: 50604843!
+addToCart: anItem amount: anAmount 
+	
+	(store checkISBNIsAvailable: anItem isbn) ifFalse: [ ^self error: Cart errorISBNIsNotAvailable ] .
+	
+	anAmount < 1 ifTrue: [ ^self error: Cart errorCantAddNoItems ] .
+	
+	(store checkStockIsEnough: anItem amount: anAmount) 
+		ifTrue: [	items add: anItem->anAmount ] 
+		ifFalse: [ ^self error: Cart errorStockIsNotEnough ]! !
+
+!methodRemoval: Store #checkISBNIsValid: stamp: 'aa 6/8/2023 12:54:43'!
+checkISBNIsValid: anISBN
+
+	booksAvailable includes: anISBN !
+!Cart methodsFor: 'adding' stamp: 'aa 6/8/2023 12:55:05' prior: 50604862!
+addToCart: anItem amount: anAmount 
+	
+	(store checkISBNIsAvailable: anItem isbn) ifFalse: [ ^self error: Cart errorISBNIsNotAvailable ] .
+	
+	anAmount < 1 ifTrue: [ ^self error: Cart errorCantAddNoItems ] .
+	
+	(store checkStockIsEnough: anItem amount: anAmount) 
+		ifTrue: [	items add: anItem->anAmount ] 
+		ifFalse: [ ^self error: Cart errorStockIsNotEnough ]
+	
+	! !
+!Cart methodsFor: 'adding' stamp: 'aa 6/8/2023 12:56:12' prior: 50604880!
+addToCart: anItem amount: anAmount 
+	
+	
+	anAmount < 1 ifTrue: [ ^self error: Cart errorCantAddNoItems ] .
+	
+	(store checkISBNIsAvailable: anItem isbn) 
+		ifFalse: [ ^self error: Cart errorISBNIsNotAvailable ] .
+	
+	(store checkStockIsEnough: anItem amount: anAmount) 
+		ifFalse: [ ^self error: Cart errorStockIsNotEnough ] .
+		
+	items add: anItem->anAmount
+	
+	! !
+!Store methodsFor: 'manage stock' stamp: 'aa 6/8/2023 12:57:11' prior: 50604389!
+addStock: anItem amount: anAmount 
+	
+	(self checkISBNIsAvailable: anItem isbn) ifFalse: [ ^self error: Store errorISBNIsNotAvailable ] .
+	
+	stock add: anItem -> anAmount! !
+!Store class methodsFor: 'no messages' stamp: 'aa 6/8/2023 12:57:33'!
+errorISBNIsNotAvailable
+
+	^'ISBN is not available'! !
+
+!testRun: #CartTest #test05GivenACartWhenAddingValidItemsThenAreAddedSuccesfuly stamp: 'aa 6/8/2023 12:57:46'!
+ERROR!
+!CartTest methodsFor: 'as yet unclassified' stamp: 'aa 6/8/2023 12:58:16' prior: 50604751!
+test05GivenACartWhenAddingValidItemsThenAreAddedSuccesfuly
+
+	| carrito store item result |
+
+	item := Book isbn: 23 .
+	store := Store new .
+	store addISBN: 23 .
+	store addStock: item amount: 2 .
+	
+	carrito := 	Cart createCartFor: store .
+	carrito addToCart: item amount: 1 .
+	
+	result := Dictionary new .
+	result add: item -> 1 .
+	
+	self assert: result equals: carrito items! !
+
+!testRun: #CartTest #test05GivenACartWhenAddingValidItemsThenAreAddedSuccesfuly stamp: 'aa 6/8/2023 12:58:33'!
+ERROR!
+!Store methodsFor: 'manage isbn' stamp: 'aa 6/8/2023 12:59:24' prior: 50604857!
+checkISBNIsAvailable: anISBN
+
+	^booksAvailable includes: anISBN ! !
+
+!testRun: #CartTest #test05GivenACartWhenAddingValidItemsThenAreAddedSuccesfuly stamp: 'aa 6/8/2023 12:59:25'!
+PASSED!
+
+!testRun: #CartTest #test01NewCartIsEmpty stamp: 'aa 6/8/2023 12:59:25'!
+PASSED!
+
+!testRun: #CartTest #test02GivenACartWhenAddingAvailableItemsThenAreAddedSuccesfuly stamp: 'aa 6/8/2023 12:59:25'!
+ERROR!
+
+!testRun: #CartTest #test03GivenACartWhenAddingUnavailableItemsThenPromptsError stamp: 'aa 6/8/2023 12:59:25'!
+FAILURE!
+
+!testRun: #CartTest #test04GivenACartThenCantAddNegativeAmountOfItems stamp: 'aa 6/8/2023 12:59:25'!
+PASSED!
+
+!testRun: #CartTest #test05GivenACartWhenAddingValidItemsThenAreAddedSuccesfuly stamp: 'aa 6/8/2023 12:59:25'!
+PASSED!
+
+!testRun: #CartTest #test05GivenACartWhenAddingValidItemsThenAreAddedSuccesfuly stamp: 'aa 6/8/2023 12:59:30'!
+PASSED!
+
+!testRun: #CartTest #test02GivenACartWhenAddingAvailableItemsThenAreAddedSuccesfuly stamp: 'aa 6/8/2023 12:59:32'!
+ERROR!
+
+!testRun: #CartTest #test02GivenACartWhenAddingAvailableItemsThenAreAddedSuccesfuly stamp: 'aa 6/8/2023 12:59:32'!
+ERROR!
+!CartTest methodsFor: 'as yet unclassified' stamp: 'aa 6/8/2023 12:59:41' prior: 50604537!
+test02GivenACartWhenAddingAvailableItemsThenAreAddedSuccesfuly
+
+	| carrito store item result |
+
+	item := Book isbn: 23 .
+	store := Store new .
+	store addISBN: 23 .
+	store addStock: item amount: 2 .
+	
+	carrito := 	Cart createCartFor: store .
+	carrito addToCart: item amount: 1 .
+	
+	result := Dictionary new .
+	result add: item -> 1 .
+	
+	self assert: result equals: carrito items! !
+!CartTest methodsFor: 'as yet unclassified' stamp: 'aa 6/8/2023 12:59:43' prior: 50604642!
+test03GivenACartWhenAddingUnavailableItemsThenPromptsError
+
+	| carrito store item |
+
+	item := Book isbn: 23 .
+	store := Store new .
+	store addISBN: 23 .
+	carrito := 	Cart createCartFor: store .
+
+	self 
+		should: [ carrito addToCart: item amount: 1 ]
+		raise: Error - MessageNotUnderstood 
+		withExceptionDo: [ :anError |
+			self assert: Cart errorStockIsNotEnough equals: anError messageText. ]! !
+
+!testRun: #CartTest #test01NewCartIsEmpty stamp: 'aa 6/8/2023 12:59:45'!
+PASSED!
+
+!testRun: #CartTest #test02GivenACartWhenAddingAvailableItemsThenAreAddedSuccesfuly stamp: 'aa 6/8/2023 12:59:45'!
+PASSED!
+
+!testRun: #CartTest #test03GivenACartWhenAddingUnavailableItemsThenPromptsError stamp: 'aa 6/8/2023 12:59:45'!
+PASSED!
+
+!testRun: #CartTest #test04GivenACartThenCantAddNegativeAmountOfItems stamp: 'aa 6/8/2023 12:59:45'!
+PASSED!
+
+!testRun: #CartTest #test05GivenACartWhenAddingValidItemsThenAreAddedSuccesfuly stamp: 'aa 6/8/2023 12:59:45'!
+PASSED!
+!CartTest methodsFor: 'as yet unclassified' stamp: 'aa 6/8/2023 12:59:56'!
+test05GivenACartWhenAddingInvalidItemsThenPromptsError
+
+	| carrito store item result |
+
+	item := Book isbn: 23 .
+	store := Store new .
+	store addISBN: 23 .
+	store addStock: item amount: 2 .
+	
+	carrito := 	Cart createCartFor: store .
+	carrito addToCart: item amount: 1 .
+	
+	result := Dictionary new .
+	result add: item -> 1 .
+	
+	self assert: result equals: carrito items! !
+!CartTest methodsFor: 'as yet unclassified' stamp: 'aa 6/8/2023 13:00:04' prior: 50605029!
+test05GivenACartWhenAddingInvalidItemsThenPromptsError
+
+	| carrito store item result |
+
+	item := Book isbn: 23 .
+	store := Store new .
+	store addStock: item amount: 2 .
+	
+	carrito := 	Cart createCartFor: store .
+	carrito addToCart: item amount: 1 .
+	
+	result := Dictionary new .
+	result add: item -> 1 .
+	
+	self assert: result equals: carrito items! !
+!CartTest methodsFor: 'as yet unclassified' stamp: 'aa 6/8/2023 13:00:10' prior: 50605044!
+test05GivenACartWhenAddingInvalidItemsThenPromptsError
+
+	| carrito store item result |
+
+	item := Book isbn: 23 .
+	store := Store new .
+	store addStock: item amount: 2 .
+	
+	carrito := 	Cart createCartFor: store .
+	carrito addToCart: item amount: 1 .
+	
+	self assert: result equals: carrito items! !
+!CartTest methodsFor: 'as yet unclassified' stamp: 'aa 6/8/2023 13:00:16' prior: 50605058!
+test05GivenACartWhenAddingInvalidItemsThenPromptsError
+
+	| carrito store item |
+
+	item := Book isbn: 23 .
+	store := Store new .
+	store addStock: item amount: 2 .
+	
+	carrito := 	Cart createCartFor: store .
+	carrito addToCart: item amount: 1 .
+	! !
+!CartTest methodsFor: 'as yet unclassified' stamp: 'aa 6/8/2023 13:00:21'!
+test06GivenACartWhenAddingInvalidItemsThenPromptsError
+
+	| carrito store item |
+
+	item := Book isbn: 23 .
+	store := Store new .
+	store addStock: item amount: 2 .
+	
+	carrito := 	Cart createCartFor: store .
+	carrito addToCart: item amount: 1 .
+	! !
+
+!methodRemoval: CartTest #test05GivenACartWhenAddingInvalidItemsThenPromptsError stamp: 'aa 6/8/2023 13:00:21'!
+test05GivenACartWhenAddingInvalidItemsThenPromptsError
+
+	| carrito store item |
+
+	item := Book isbn: 23 .
+	store := Store new .
+	store addStock: item amount: 2 .
+	
+	carrito := 	Cart createCartFor: store .
+	carrito addToCart: item amount: 1 .
+	!
+!CartTest methodsFor: 'as yet unclassified' stamp: 'aa 6/8/2023 13:00:39' prior: 50605082!
+test06GivenACartWhenAddingInvalidItemsThenPromptsError
+
+	| carrito store item |
+
+	item := Book isbn: 23 .
+	store := Store new .
+	store addStock: item amount: 2 .
+	
+	carrito := 	Cart createCartFor: store .
+	carrito addToCart: item amount: 1 .
+	
+	self 
+		should: [ carrito addToCart: item amount: 1 ]
+		raise: Error - MessageNotUnderstood 
+		withExceptionDo: [ :anError |
+			self assert: Cart errorISBNIsNotAvailable equals: anError messageText. ]! !
+
+!testRun: #CartTest #test06GivenACartWhenAddingInvalidItemsThenPromptsError stamp: 'aa 6/8/2023 13:00:40'!
+ERROR!
+!CartTest methodsFor: 'as yet unclassified' stamp: 'aa 6/8/2023 13:02:19' prior: 50605104!
+test06GivenACartWhenAddingInvalidItemsThenPromptsError
+
+	| carrito store item |
+
+	item := Book isbn: 23 .
+	store := Store new .
+	
+	carrito := 	Cart createCartFor: store .
+	carrito addToCart: item amount: 1 .
+	
+	self 
+		should: [ carrito addToCart: item amount: 1 ]
+		raise: Error - MessageNotUnderstood 
+		withExceptionDo: [ :anError |
+			self assert: Cart errorISBNIsNotAvailable equals: anError messageText. ]! !
+
+!testRun: #CartTest #test06GivenACartWhenAddingInvalidItemsThenPromptsError stamp: 'aa 6/8/2023 13:02:21'!
+ERROR!
+
+!testRun: #CartTest #test06GivenACartWhenAddingInvalidItemsThenPromptsError stamp: 'aa 6/8/2023 13:02:21'!
+ERROR!
+
+!testRun: #CartTest #test06GivenACartWhenAddingInvalidItemsThenPromptsError stamp: 'aa 6/8/2023 13:02:32'!
+ERROR!
+
+!testRun: #CartTest #test06GivenACartWhenAddingInvalidItemsThenPromptsError stamp: 'aa 6/8/2023 13:02:32'!
+ERROR!
+
+!testRun: #CartTest #test06GivenACartWhenAddingInvalidItemsThenPromptsError stamp: 'aa 6/8/2023 13:02:46'!
+ERROR!
+
+!testRun: #CartTest #test06GivenACartWhenAddingInvalidItemsThenPromptsError stamp: 'aa 6/8/2023 13:02:46'!
+ERROR!
+!CartTest methodsFor: 'as yet unclassified' stamp: 'aa 6/8/2023 13:03:11' prior: 50605125!
+test06GivenACartWhenAddingInvalidItemsThenPromptsError
+
+	| carrito store item |
+
+	item := Book isbn: 23 .
+	store := Store new .
+	
+	carrito := 	Cart createCartFor: store .
+	
+	self 
+		should: [ carrito addToCart: item amount: 1 ]
+		raise: Error - MessageNotUnderstood 
+		withExceptionDo: [ :anError |
+			self assert: Cart errorISBNIsNotAvailable equals: anError messageText. ]! !
+
+!testRun: #CartTest #test06GivenACartWhenAddingInvalidItemsThenPromptsError stamp: 'aa 6/8/2023 13:03:11'!
+PASSED!
+
+!testRun: #CartTest #test01NewCartIsEmpty stamp: 'aa 6/8/2023 13:03:11'!
+PASSED!
+
+!testRun: #CartTest #test02GivenACartWhenAddingAvailableItemsThenAreAddedSuccesfuly stamp: 'aa 6/8/2023 13:03:11'!
+PASSED!
+
+!testRun: #CartTest #test03GivenACartWhenAddingUnavailableItemsThenPromptsError stamp: 'aa 6/8/2023 13:03:11'!
+PASSED!
+
+!testRun: #CartTest #test04GivenACartThenCantAddNegativeAmountOfItems stamp: 'aa 6/8/2023 13:03:11'!
+PASSED!
+
+!testRun: #CartTest #test05GivenACartWhenAddingValidItemsThenAreAddedSuccesfuly stamp: 'aa 6/8/2023 13:03:11'!
+PASSED!
+
+!testRun: #CartTest #test06GivenACartWhenAddingInvalidItemsThenPromptsError stamp: 'aa 6/8/2023 13:03:11'!
+PASSED!
+!CartTest methodsFor: 'as yet unclassified' stamp: 'aa 6/8/2023 13:15:28'!
+test07GivenACartThenCanListItems
+
+	| carrito store item |
+
+	item := Book isbn: 23 .
+	store := Store new .
+	
+	carrito := 	Cart createCartFor: store .
+	
+	self 
+		should: [ carrito addToCart: item amount: 1 ]
+		raise: Error - MessageNotUnderstood 
+		withExceptionDo: [ :anError |
+			self assert: Cart errorISBNIsNotAvailable equals: anError messageText. ]! !
+!CartTest methodsFor: 'as yet unclassified' stamp: 'aa 6/8/2023 13:15:48' prior: 50605202!
+test07GivenACartThenCanListItems
+
+	| carrito store item result |
+
+	item := Book isbn: 23 .
+	store := Store new .
+	store addISBN: 23 .
+	store addStock: item amount: 2 .
+	
+	carrito := 	Cart createCartFor: store .
+	carrito addToCart: item amount: 1 .
+	
+	result := Dictionary new .
+	result add: item -> 1 .
+	
+	self assert: result equals: carrito items! !
+
+!testRun: #CartTest #test07GivenACartThenCanListItems stamp: 'aa 6/8/2023 13:16:43'!
+PASSED!
+
+!testRun: #CartTest #test01NewCartIsEmpty stamp: 'aa 6/8/2023 13:16:43'!
+PASSED!
+
+!testRun: #CartTest #test02GivenACartWhenAddingAvailableItemsThenAreAddedSuccesfuly stamp: 'aa 6/8/2023 13:16:43'!
+PASSED!
+
+!testRun: #CartTest #test03GivenACartWhenAddingUnavailableItemsThenPromptsError stamp: 'aa 6/8/2023 13:16:43'!
+PASSED!
+
+!testRun: #CartTest #test04GivenACartThenCantAddNegativeAmountOfItems stamp: 'aa 6/8/2023 13:16:43'!
+PASSED!
+
+!testRun: #CartTest #test05GivenACartWhenAddingValidItemsThenAreAddedSuccesfuly stamp: 'aa 6/8/2023 13:16:43'!
+PASSED!
+
+!testRun: #CartTest #test06GivenACartWhenAddingInvalidItemsThenPromptsError stamp: 'aa 6/8/2023 13:16:43'!
+PASSED!
+
+!testRun: #CartTest #test07GivenACartThenCanListItems stamp: 'aa 6/8/2023 13:16:43'!
+PASSED!
+
+!methodRemoval: CartTest #test07GivenACartThenCanListItems stamp: 'aa 6/8/2023 13:20:09'!
+test07GivenACartThenCanListItems
+
+	| carrito store item result |
+
+	item := Book isbn: 23 .
+	store := Store new .
+	store addISBN: 23 .
+	store addStock: item amount: 2 .
+	
+	carrito := 	Cart createCartFor: store .
+	carrito addToCart: item amount: 1 .
+	
+	result := Dictionary new .
+	result add: item -> 1 .
+	
+	self assert: result equals: carrito items!
+
+----SNAPSHOT----(8 June 2023 13:20:34) CuisUniversity-5706.image priorSource: 8739119!
