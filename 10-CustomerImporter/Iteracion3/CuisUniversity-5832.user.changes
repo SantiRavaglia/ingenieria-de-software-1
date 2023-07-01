@@ -1,0 +1,634 @@
+
+
+----QUIT----(30 May 2023 00:05:32) CuisUniversity-5832.image priorSource: 4928100!
+
+----STARTUP---- (30 May 2023 00:05:33) as /Users/hernan/Documents/Cuis/5.0-64Bits/Cuis-University-Installer/CuisUniversity-5832.image!
+
+
+----QUIT----(30 May 2023 00:05:33) CuisUniversity-5832.image priorSource: 9366537!
+
+----STARTUP---- (1 July 2023 15:21:05) as C:\Users\Santiago\Desktop\UBA\Inge1\Ej10\it3\windows64\CuisUniversity-5832.image!
+
+
+----End fileIn of C:\Users\Santiago\Downloads\CustomerImporter (1).st----!
+
+!classRemoval: #IntegrationEnvironment stamp: 'aa 7/1/2023 15:33:02'!
+Environment subclass: #IntegrationEnvironment
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'CustomerImporter'!
+
+!classRemoval: #DevelopmentEnvironment stamp: 'aa 7/1/2023 15:33:02'!
+Environment subclass: #DevelopmentEnvironment
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'CustomerImporter'!
+
+!classRemoval: #Environment stamp: 'aa 7/1/2023 15:33:02'!
+Object subclass: #Environment
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'CustomerImporter'!
+
+!classRemoval: #DataBaseSession stamp: 'aa 7/1/2023 15:33:02'!
+Object subclass: #DataBaseSession
+	instanceVariableNames: 'configuration tables id'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'CustomerImporter'!
+
+!classRemoval: #TranscientCustomerSystem stamp: 'aa 7/1/2023 15:33:02'!
+CustomerSystem subclass: #TranscientCustomerSystem
+	instanceVariableNames: 'customers'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'CustomerImporter'!
+
+!classRemoval: #PersistentCustomerSystem stamp: 'aa 7/1/2023 15:33:03'!
+CustomerSystem subclass: #PersistentCustomerSystem
+	instanceVariableNames: 'session'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'CustomerImporter'!
+
+!classRemoval: #CustomerSystem stamp: 'aa 7/1/2023 15:33:03'!
+Object subclass: #CustomerSystem
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'CustomerImporter'!
+
+!classRemoval: #CustomerImporter stamp: 'aa 7/1/2023 15:33:03'!
+Object subclass: #CustomerImporter
+	instanceVariableNames: 'session readStream newCustomer line record system'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'CustomerImporter'!
+
+!classRemoval: #Customer stamp: 'aa 7/1/2023 15:33:03'!
+Object subclass: #Customer
+	instanceVariableNames: 'id firstName lastName identificationType identificationNumber addresses'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'CustomerImporter'!
+
+!classRemoval: #Address stamp: 'aa 7/1/2023 15:33:03'!
+Object subclass: #Address
+	instanceVariableNames: 'id streetName streetNumber town zipCode province'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'CustomerImporter'!
+
+!classRemoval: #ImportTest stamp: 'aa 7/1/2023 15:33:03'!
+TestCase subclass: #ImportTest
+	instanceVariableNames: 'system'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'CustomerImporter'!
+
+----End fileIn of C:\Users\Santiago\Desktop\UBA\Inge1\Ej10\it3\Step2\CustomerImporter-60.st----!
+
+Object subclass: #Environment
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'CustomerImporter'!
+
+!classDefinition: #Environment category: 'CustomerImporter' stamp: 'aa 7/1/2023 15:35:16'!
+Object subclass: #Environment
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'CustomerImporter'!
+
+Environment subclass: #DevEnvironment
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'CustomerImporter'!
+
+!classDefinition: #DevEnvironment category: 'CustomerImporter' stamp: 'aa 7/1/2023 15:35:45'!
+Environment subclass: #DevEnvironment
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'CustomerImporter'!
+
+Environment subclass: #IntEnvironment
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'CustomerImporter'!
+
+!classDefinition: #IntEnvironment category: 'CustomerImporter' stamp: 'aa 7/1/2023 15:35:59'!
+Environment subclass: #IntEnvironment
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'CustomerImporter'!
+!Environment class methodsFor: 'no messages' stamp: 'aa 7/1/2023 15:36:10'!
+current
+
+	^(self subclasses detect: [:each | each isCurrent] ifNone: [self shouldNotHappen ]) new! !
+!Environment class methodsFor: 'as yet unclassified' stamp: 'aa 7/1/2023 15:36:15'!
+isCurrent
+
+	self subclassResponsibility ! !
+!DevEnvironment class methodsFor: 'no messages' stamp: 'aa 7/1/2023 15:36:21' overrides: 50626020!
+isCurrent
+	
+	^true! !
+!DevEnvironment class methodsFor: 'as yet unclassified' stamp: 'aa 7/1/2023 15:36:24' prior: 50626025 overrides: 50626020!
+isCurrent
+	
+	^false! !
+
+!classDefinition: #TranscientCustomerSystem category: 'CustomerImporter' stamp: 'aa 7/1/2023 15:36:57'!
+Object subclass: #TranscientCustomerSystem
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'CustomerImporter'!
+!DevEnvironment methodsFor: 'no messages' stamp: 'aa 7/1/2023 15:36:40'!
+customerSystem
+
+	^TranscientCustomerSystem new! !
+
+!classDefinition: #PersistentCustomerSystem category: 'CustomerImporter' stamp: 'aa 7/1/2023 15:37:07'!
+Object subclass: #PersistentCustomerSystem
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'CustomerImporter'!
+!IntEnvironment methodsFor: 'nil' stamp: 'aa 7/1/2023 15:37:04'!
+customerSystem
+
+	^PersistentCustomerSystem new! !
+
+Object subclass: #CustomerSystem
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'CustomerImporter'!
+
+!classDefinition: #CustomerSystem category: 'CustomerImporter' stamp: 'aa 7/1/2023 15:37:15'!
+Object subclass: #CustomerSystem
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'CustomerImporter'!
+
+CustomerSystem subclass: #PersistentCustomerSystem
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'CustomerImporter'!
+
+!classDefinition: #PersistentCustomerSystem category: 'CustomerImporter' stamp: 'aa 7/1/2023 15:37:23'!
+CustomerSystem subclass: #PersistentCustomerSystem
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'CustomerImporter'!
+
+CustomerSystem subclass: #TranscientCustomerSystem
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'CustomerImporter'!
+
+!classDefinition: #TranscientCustomerSystem category: 'CustomerImporter' stamp: 'aa 7/1/2023 15:37:24'!
+CustomerSystem subclass: #TranscientCustomerSystem
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'CustomerImporter'!
+!CustomerSystem methodsFor: 'no messages' stamp: 'aa 7/1/2023 15:38:03'!
+addCustomer: aCustomer
+	
+	self subclassResponsibility.! !
+!CustomerSystem methodsFor: 'as yet unclassified' stamp: 'aa 7/1/2023 15:38:10'!
+add: aCustomer
+	
+	self subclassResponsibility.! !
+
+!methodRemoval: CustomerSystem #addCustomer: stamp: 'aa 7/1/2023 15:38:10'!
+addCustomer: aCustomer
+	
+	self subclassResponsibility.!
+!CustomerSystem methodsFor: 'as yet unclassified' stamp: 'aa 7/1/2023 15:39:18'!
+numberOfCustomers
+
+	self subclassResponsibility ! !
+!CustomerSystem methodsFor: 'as yet unclassified' stamp: 'aa 7/1/2023 15:39:26'!
+start
+	
+	self subclassResponsibility ! !
+!CustomerSystem methodsFor: 'as yet unclassified' stamp: 'aa 7/1/2023 15:39:38'!
+customerWithIdentificationType: anIdType number: anIdNumber
+
+	self subclassResponsibility ! !
+!CustomerSystem methodsFor: 'as yet unclassified' stamp: 'aa 7/1/2023 15:40:10'!
+beginTransaction
+
+	self subclassResponsibility ! !
+!CustomerSystem methodsFor: 'as yet unclassified' stamp: 'aa 7/1/2023 15:40:15'!
+commit
+
+	self subclassResponsibility ! !
+!CustomerSystem methodsFor: 'as yet unclassified' stamp: 'aa 7/1/2023 15:40:25'!
+close
+
+	self subclassResponsibility ! !
+
+!classDefinition: #PersistentCustomerSystem category: 'CustomerImporter' stamp: 'aa 7/1/2023 15:40:47'!
+CustomerSystem subclass: #PersistentCustomerSystem
+	instanceVariableNames: 'session'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'CustomerImporter'!
+!PersistentCustomerSystem methodsFor: 'no messages' stamp: 'aa 7/1/2023 15:40:46' overrides: 16920235!
+initialize
+	
+	session := DataBaseSession for: (Array with: Address with: Customer).
+! !
+!PersistentCustomerSystem methodsFor: 'nil' stamp: 'aa 7/1/2023 15:41:00' overrides: 50626118!
+customerWithIdentificationType: anIdType number: anIdNumber
+
+	^ (session
+		select: [ :aCustomer | aCustomer identificationType = anIdType and: [ aCustomer identificationNumber = anIdNumber ]]
+		ofType: Customer) anyOne! !
+!PersistentCustomerSystem methodsFor: 'as yet unclassified' stamp: 'aa 7/1/2023 15:41:06' overrides: 50626114!
+start
+	
+	session beginTransaction.
+! !
+!PersistentCustomerSystem methodsFor: 'as yet unclassified' stamp: 'aa 7/1/2023 15:41:38' overrides: 50626133!
+close! !
+!PersistentCustomerSystem methodsFor: 'as yet unclassified' stamp: 'aa 7/1/2023 15:41:50' overrides: 50626129!
+commit
+
+	session commit! !
+!PersistentCustomerSystem methodsFor: 'as yet unclassified' stamp: 'aa 7/1/2023 15:42:05' overrides: 50626109!
+numberOfCustomers
+
+	^ (session selectAllOfType: Customer) size! !
+!PersistentCustomerSystem methodsFor: 'as yet unclassified' stamp: 'aa 7/1/2023 15:42:31'!
+addCustomer: aCustomer
+	
+	session persist: aCustomer.! !
+!PersistentCustomerSystem methodsFor: 'as yet unclassified' stamp: 'aa 7/1/2023 15:43:35' overrides: 50626100!
+add: aCustomer
+	
+	session persist: aCustomer.! !
+
+!methodRemoval: PersistentCustomerSystem #addCustomer: stamp: 'aa 7/1/2023 15:43:35'!
+addCustomer: aCustomer
+	
+	session persist: aCustomer.!
+!PersistentCustomerSystem methodsFor: 'as yet unclassified' stamp: 'aa 7/1/2023 15:43:57' overrides: 50626124!
+beginTransaction
+
+	self subclassResponsibility ! !
+
+!methodRemoval: PersistentCustomerSystem #initialize stamp: 'aa 7/1/2023 15:44:12'!
+initialize
+	
+	session := DataBaseSession for: (Array with: Address with: Customer).
+!
+!PersistentCustomerSystem methodsFor: 'as yet unclassified' stamp: 'aa 7/1/2023 15:44:42' prior: 50626163 overrides: 50626114!
+start
+	
+	session := DataBaseSession for: (Array with: Address with: Customer).
+	self beginTransaction.
+! !
+!PersistentCustomerSystem methodsFor: 'as yet unclassified' stamp: 'aa 7/1/2023 15:44:49' prior: 50626198 overrides: 50626124!
+beginTransaction
+
+	session beginTransaction ! !
+
+!classDefinition: #TranscientCustomerSystem category: 'CustomerImporter' stamp: 'aa 7/1/2023 15:56:29'!
+CustomerSystem subclass: #TranscientCustomerSystem
+	instanceVariableNames: 'session'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'CustomerImporter'!
+!TranscientCustomerSystem methodsFor: 'no messages' stamp: 'aa 7/1/2023 15:56:23' overrides: 50626114!
+start
+	
+	session := DataBaseSession for: (Array with: Address with: Customer).
+	self beginTransaction.
+! !
+!TranscientCustomerSystem methodsFor: 'as yet unclassified' stamp: 'aa 7/1/2023 15:56:35' overrides: 50626109!
+numberOfCustomers
+
+	^ (session selectAllOfType: Customer) size! !
+!TranscientCustomerSystem methodsFor: 'as yet unclassified' stamp: 'aa 7/1/2023 15:56:39' overrides: 50626118!
+customerWithIdentificationType: anIdType number: anIdNumber
+
+	^ (session
+		select: [ :aCustomer | aCustomer identificationType = anIdType and: [ aCustomer identificationNumber = anIdNumber ]]
+		ofType: Customer) anyOne! !
+!TranscientCustomerSystem methodsFor: 'as yet unclassified' stamp: 'aa 7/1/2023 15:56:46' overrides: 50626129!
+commit
+
+	session commit! !
+!TranscientCustomerSystem methodsFor: 'as yet unclassified' stamp: 'aa 7/1/2023 15:56:50' overrides: 50626133!
+close! !
+!TranscientCustomerSystem methodsFor: 'as yet unclassified' stamp: 'aa 7/1/2023 15:56:55' overrides: 50626124!
+beginTransaction
+
+	session beginTransaction ! !
+!TranscientCustomerSystem methodsFor: 'as yet unclassified' stamp: 'aa 7/1/2023 15:57:01' overrides: 50626100!
+add: aCustomer
+	
+	session persist: aCustomer.! !
+
+!classDefinition: #TranscientCustomerSystem category: 'CustomerImporter' stamp: 'aa 7/1/2023 15:57:16'!
+CustomerSystem subclass: #TranscientCustomerSystem
+	instanceVariableNames: 'session customers'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'CustomerImporter'!
+!TranscientCustomerSystem methodsFor: 'as yet unclassified' stamp: 'aa 7/1/2023 15:57:16' prior: 50626231 overrides: 50626114!
+start
+	
+	customers := OrderedCollection new! !
+
+CustomerSystem subclass: #TranscientCustomerSystem
+	instanceVariableNames: 'customers'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'CustomerImporter'!
+
+!classDefinition: #TranscientCustomerSystem category: 'CustomerImporter' stamp: 'aa 7/1/2023 15:57:21'!
+CustomerSystem subclass: #TranscientCustomerSystem
+	instanceVariableNames: 'customers'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'CustomerImporter'!
+!TranscientCustomerSystem methodsFor: 'as yet unclassified' stamp: 'aa 7/1/2023 15:57:27' prior: 50626284 overrides: 50626114!
+start
+	
+	customers := OrderedCollection new
+	self beginTransaction ! !
+!TranscientCustomerSystem methodsFor: 'as yet unclassified' stamp: 'aa 7/1/2023 15:57:29' prior: 50626303 overrides: 50626114!
+start
+	
+	customers := OrderedCollection new .
+	self beginTransaction ! !
+!TranscientCustomerSystem methodsFor: 'as yet unclassified' stamp: 'aa 7/1/2023 15:57:37' prior: 50626269 overrides: 50626100!
+add: aCustomer
+	
+	customers add: aCustomer ! !
+!TranscientCustomerSystem methodsFor: 'as yet unclassified' stamp: 'aa 7/1/2023 15:57:44' prior: 50626264 overrides: 50626124!
+beginTransaction! !
+!TranscientCustomerSystem methodsFor: 'as yet unclassified' stamp: 'aa 7/1/2023 15:57:51' prior: 50626260 overrides: 50626133!
+close
+
+	customers := nil! !
+!TranscientCustomerSystem methodsFor: 'as yet unclassified' stamp: 'aa 7/1/2023 15:57:58' prior: 50626255 overrides: 50626129!
+commit
+! !
+!TranscientCustomerSystem methodsFor: 'as yet unclassified' stamp: 'aa 7/1/2023 16:00:39' prior: 50626238 overrides: 50626109!
+numberOfCustomers
+
+	^customers size! !
+!TranscientCustomerSystem methodsFor: 'as yet unclassified' stamp: 'aa 7/1/2023 16:02:11' prior: 50626244 overrides: 50626118!
+customerWithIdentificationType: anIdType number: anIdNumber
+
+	^customers		detect: [ :aCustomer | aCustomer identificationType = anIdType and: [ aCustomer identificationNumber = anIdNumber ]]! !
+
+!classDefinition: #ImportTest category: 'CustomerImporter' stamp: 'aa 7/1/2023 16:29:27'!
+TestCase subclass: #ImportTest
+	instanceVariableNames: 'system'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'CustomerImporter'!
+!ImportTest methodsFor: 'as yet unclassified' stamp: 'aa 7/1/2023 16:29:27' prior: 50625550!
+numberOfCustomers
+
+	^ (system selectAllOfType: Customer) size! !
+!ImportTest methodsFor: 'as yet unclassified' stamp: 'aa 7/1/2023 16:29:27' prior: 50625515!
+shouldFailImporting: aReadStream messageText: anErrorMessageText asserting: anAssertionBlock
+
+	self
+		should: [ CustomerImporter valueFrom: aReadStream into: system. ]
+		raise: Error - MessageNotUnderstood
+		withExceptionDo: [ :anError |
+			self assert: anErrorMessageText equals: anError messageText.
+			anAssertionBlock value ]
+
+	! !
+!ImportTest methodsFor: 'as yet unclassified' stamp: 'aa 7/1/2023 16:29:27' prior: 50625346!
+test02CanNotImportAddressWithoutCustomer
+
+	self
+		should: [ CustomerImporter valueFrom: self addressWithoutCustomerData into: system. ]
+		raise: Error - MessageNotUnderstood
+		withMessageText: CustomerImporter canNotImportAddressWithoutCustomerErrorDescription
+
+	! !
+!ImportTest methodsFor: 'as yet unclassified' stamp: 'aa 7/1/2023 16:29:27' prior: 50625336!
+test01ValidDataIsImportedCorrectly
+
+	CustomerImporter valueFrom: self validImportData into: system..
+
+	self assertImportedRightNumberOfCustomers.
+	self assertPepeSanchezWasImportedCorrecty.
+	self assertJuanPerezWasImportedCorrectly ! !
+!ImportTest methodsFor: 'as yet unclassified' stamp: 'aa 7/1/2023 16:29:27' prior: 50625529 overrides: 16961394!
+setUp
+
+	system := DataBaseSession for: (Array with: Address with: Customer).
+	system beginTransaction.
+! !
+!ImportTest methodsFor: 'as yet unclassified' stamp: 'aa 7/1/2023 16:29:27' prior: 50625536 overrides: 16961402!
+tearDown
+
+	system commit.
+	system close.
+	! !
+!ImportTest methodsFor: 'as yet unclassified' stamp: 'aa 7/1/2023 16:29:27' prior: 50625540!
+customerWithIdentificationType: anIdType number: anIdNumber
+
+	^ (system
+		select: [ :aCustomer | aCustomer identificationType = anIdType and: [ aCustomer identificationNumber = anIdNumber ]]
+		ofType: Customer) anyOne! !
+!ImportTest methodsFor: 'setUp/tearDown' stamp: 'aa 7/1/2023 16:29:47' prior: 50626403 overrides: 16961394!
+setUp
+
+	system := DataBaseSession for: (Array with: Address with: Customer).
+	system start.
+! !
+!ImportTest methodsFor: 'setUp/tearDown' stamp: 'aa 7/1/2023 16:29:55' prior: 50626426 overrides: 16961394!
+setUp
+
+	system := Environment current customerSystem.
+	system start.
+! !
+
+!classDefinition: #CustomerImporter category: 'CustomerImporter' stamp: 'aa 7/1/2023 16:31:52'!
+Object subclass: #CustomerImporter
+	instanceVariableNames: 'system readStream newCustomer line record'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'CustomerImporter'!
+!CustomerImporter methodsFor: 'as yet unclassified' stamp: 'aa 7/1/2023 16:31:52' prior: 50625745!
+initializeFrom: aReadStream into: aSession
+	system := aSession.
+	readStream := aReadStream.! !
+!CustomerImporter methodsFor: 'as yet unclassified' stamp: 'aa 7/1/2023 16:31:52' prior: 50625764!
+importCustomer
+
+	self assertValidCustomerRecord.
+
+	newCustomer := Customer new.
+	newCustomer firstName: record second.
+	newCustomer lastName: record third.
+	newCustomer identificationType: record fourth.
+	newCustomer identificationNumber: record fifth.
+	system persist: newCustomer! !
+!CustomerImporter methodsFor: 'customer' stamp: 'aa 7/1/2023 16:31:55' prior: 50626455!
+importCustomer
+
+	self assertValidCustomerRecord.
+
+	newCustomer := Customer new.
+	newCustomer firstName: record second.
+	newCustomer lastName: record third.
+	newCustomer identificationType: record fourth.
+	newCustomer identificationNumber: record fifth.
+	system add: newCustomer! !
+!DevEnvironment class methodsFor: 'as yet unclassified' stamp: 'aa 7/1/2023 16:35:03' prior: 50626030 overrides: 50626020!
+isCurrent
+	
+	^true! !
+!IntEnvironment class methodsFor: 'no messages' stamp: 'aa 7/1/2023 16:35:07' overrides: 50626020!
+isCurrent
+	
+	^false! !
+
+!testRun: #ImportTest #test01ValidDataIsImportedCorrectly stamp: 'aa 7/1/2023 16:35:08'!
+ERROR!
+
+!testRun: #ImportTest #test02CanNotImportAddressWithoutCustomer stamp: 'aa 7/1/2023 16:35:08'!
+PASSED!
+
+!testRun: #ImportTest #test03DoesNotImportRecordsStartingWithCButMoreCharacters stamp: 'aa 7/1/2023 16:35:08'!
+ERROR!
+
+!testRun: #ImportTest #test04DoesNotImportRecordsStartingWithAButMoreCharacters stamp: 'aa 7/1/2023 16:35:08'!
+ERROR!
+
+!testRun: #ImportTest #test05CanNotImportAddressRecordWithLessThanSixFields stamp: 'aa 7/1/2023 16:35:08'!
+ERROR!
+
+!testRun: #ImportTest #test06CanNotImportAddressRecordWithMoreThanSixFields stamp: 'aa 7/1/2023 16:35:08'!
+ERROR!
+
+!testRun: #ImportTest #test07CanNotImportCustomerRecordWithLessThanFiveFields stamp: 'aa 7/1/2023 16:35:08'!
+ERROR!
+
+!testRun: #ImportTest #test08CanNotImportCustomerRecordWithMoreThanFiveFields stamp: 'aa 7/1/2023 16:35:08'!
+ERROR!
+
+!testRun: #ImportTest #test09CannotImportEmptyLine stamp: 'aa 7/1/2023 16:35:08'!
+ERROR!
+!ImportTest methodsFor: 'customer' stamp: 'aa 7/1/2023 16:43:48' prior: 50626361!
+numberOfCustomers
+
+	^system numberOfCustomers ! !
+
+!testRun: #ImportTest #test01ValidDataIsImportedCorrectly stamp: 'aa 7/1/2023 16:43:58'!
+ERROR!
+
+!testRun: #ImportTest #test02CanNotImportAddressWithoutCustomer stamp: 'aa 7/1/2023 16:43:58'!
+PASSED!
+
+!testRun: #ImportTest #test03DoesNotImportRecordsStartingWithCButMoreCharacters stamp: 'aa 7/1/2023 16:43:58'!
+PASSED!
+
+!testRun: #ImportTest #test04DoesNotImportRecordsStartingWithAButMoreCharacters stamp: 'aa 7/1/2023 16:43:58'!
+ERROR!
+
+!testRun: #ImportTest #test05CanNotImportAddressRecordWithLessThanSixFields stamp: 'aa 7/1/2023 16:43:58'!
+ERROR!
+
+!testRun: #ImportTest #test06CanNotImportAddressRecordWithMoreThanSixFields stamp: 'aa 7/1/2023 16:43:58'!
+ERROR!
+
+!testRun: #ImportTest #test07CanNotImportCustomerRecordWithLessThanFiveFields stamp: 'aa 7/1/2023 16:43:58'!
+PASSED!
+
+!testRun: #ImportTest #test08CanNotImportCustomerRecordWithMoreThanFiveFields stamp: 'aa 7/1/2023 16:43:58'!
+PASSED!
+
+!testRun: #ImportTest #test09CannotImportEmptyLine stamp: 'aa 7/1/2023 16:43:58'!
+PASSED!
+
+!testRun: #ImportTest #test01ValidDataIsImportedCorrectly stamp: 'aa 7/1/2023 16:44:14'!
+ERROR!
+
+system numberOfCustomers!
+!ImportTest methodsFor: 'customer' stamp: 'aa 7/1/2023 16:46:01' prior: 50626415!
+customerWithIdentificationType: anIdType number: anIdNumber
+
+	^system customerWithIdentificationType: anIdType number: anIdNumber! !
+
+!testRun: #ImportTest #test01ValidDataIsImportedCorrectly stamp: 'aa 7/1/2023 16:46:08'!
+PASSED!
+
+!testRun: #ImportTest #test02CanNotImportAddressWithoutCustomer stamp: 'aa 7/1/2023 16:46:08'!
+PASSED!
+
+!testRun: #ImportTest #test03DoesNotImportRecordsStartingWithCButMoreCharacters stamp: 'aa 7/1/2023 16:46:08'!
+PASSED!
+
+!testRun: #ImportTest #test04DoesNotImportRecordsStartingWithAButMoreCharacters stamp: 'aa 7/1/2023 16:46:08'!
+PASSED!
+
+!testRun: #ImportTest #test05CanNotImportAddressRecordWithLessThanSixFields stamp: 'aa 7/1/2023 16:46:08'!
+PASSED!
+
+!testRun: #ImportTest #test06CanNotImportAddressRecordWithMoreThanSixFields stamp: 'aa 7/1/2023 16:46:08'!
+PASSED!
+
+!testRun: #ImportTest #test07CanNotImportCustomerRecordWithLessThanFiveFields stamp: 'aa 7/1/2023 16:46:09'!
+PASSED!
+
+!testRun: #ImportTest #test08CanNotImportCustomerRecordWithMoreThanFiveFields stamp: 'aa 7/1/2023 16:46:09'!
+PASSED!
+
+!testRun: #ImportTest #test09CannotImportEmptyLine stamp: 'aa 7/1/2023 16:46:09'!
+PASSED!
+
+!testRun: #ImportTest #test01ValidDataIsImportedCorrectly stamp: 'aa 7/1/2023 16:46:47'!
+PASSED!
+
+!testRun: #ImportTest #test02CanNotImportAddressWithoutCustomer stamp: 'aa 7/1/2023 16:46:47'!
+PASSED!
+
+!testRun: #ImportTest #test03DoesNotImportRecordsStartingWithCButMoreCharacters stamp: 'aa 7/1/2023 16:46:47'!
+PASSED!
+
+!testRun: #ImportTest #test04DoesNotImportRecordsStartingWithAButMoreCharacters stamp: 'aa 7/1/2023 16:46:47'!
+PASSED!
+
+!testRun: #ImportTest #test05CanNotImportAddressRecordWithLessThanSixFields stamp: 'aa 7/1/2023 16:46:47'!
+PASSED!
+
+!testRun: #ImportTest #test06CanNotImportAddressRecordWithMoreThanSixFields stamp: 'aa 7/1/2023 16:46:47'!
+PASSED!
+
+!testRun: #ImportTest #test07CanNotImportCustomerRecordWithLessThanFiveFields stamp: 'aa 7/1/2023 16:46:47'!
+PASSED!
+
+!testRun: #ImportTest #test08CanNotImportCustomerRecordWithMoreThanFiveFields stamp: 'aa 7/1/2023 16:46:47'!
+PASSED!
+
+!testRun: #ImportTest #test09CannotImportEmptyLine stamp: 'aa 7/1/2023 16:46:47'!
+PASSED!
